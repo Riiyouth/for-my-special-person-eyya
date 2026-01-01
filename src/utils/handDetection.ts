@@ -66,6 +66,12 @@ export const detectGesture = (landmarks: any[]): string => {
     return "Fist";
   }
 
+    // Half-Heart: Thumb + index pinch with other fingers folded (looser threshold than finger heart)
+    const middleFolded = !middleUp && !ringUp && !pinkyUp;
+    if (indexUp && middleFolded && thumbIndexDist < 0.08) {
+      return "Half Heart";
+  }
+
   // V-Sign: Index and Middle up, others down
   if (indexUp && middleUp && !ringUp && !pinkyUp) {
     return "V-Sign";
@@ -74,12 +80,6 @@ export const detectGesture = (landmarks: any[]): string => {
   // Open Hand: All fingers up
   if (indexUp && middleUp && ringUp && pinkyUp) {
     return "Open Hand";
-  }
-
-  // Finger Heart: Thumb and Index close, others down (or up, but usually down/relaxed)
-  // This is tricky. Usually crossed. Let's check distance.
-  if (thumbIndexDist < 0.05) {
-    return "Finger Heart";
   }
 
   return "Unknown";

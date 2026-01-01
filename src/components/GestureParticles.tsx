@@ -218,7 +218,7 @@ export default function GestureParticles() {
       case "V-Sign": // Text
         shapeData = shapeGenRef.current.getText(PARTICLE_COUNT, "I LOVE YOU");
         break;
-      case "Finger Heart": // Heart
+      case "Half Heart": // Heart
         shapeData = shapeGenRef.current.getHeart(PARTICLE_COUNT);
         break;
       case "Open Hand": // Sphere
@@ -373,7 +373,7 @@ export default function GestureParticles() {
       {/* Instructions */}
       <div className="absolute bottom-8 left-0 right-0 text-center pointer-events-none">
         <div className="inline-block bg-black/50 backdrop-blur px-6 py-3 rounded-full border border-white/10 text-white/80 text-sm">
-          ✊ Saturn &nbsp;•&nbsp; ✌️ I Love You &nbsp;•&nbsp; 🤌 Heart &nbsp;•&nbsp; 🖐 Happy NY
+          ✊ Saturn &nbsp;•&nbsp; ✌️ I Love You &nbsp;•&nbsp; 🫶 Half Heart &nbsp;•&nbsp; 🖐 Happy NY
         </div>
       </div>
     </div>
